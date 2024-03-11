@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo',100);
+            $table->string('descripcion',100);
+            $table->boolean('status');
+            $table->string('visita',100);
+            $table->unsignedBigInteger('profile_id');
             $table->timestamps();
+            
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 

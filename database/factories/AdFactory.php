@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Profile;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class AdFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'titulo' => fake()->sentence(),
+            'descripcion' => fake()->sentence(),
+            'status' =>fake()->boolean(),
+            'visita'=> fake()->numberBetween(1,100),
+            'profile_id' => Profile::inRandomOrder()->first()->id,
         ];
     }
 }
