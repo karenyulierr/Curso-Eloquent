@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::get('/categories-list', [CategoryController::class, 'index']);
 Route::get('/categories-new', [CategoryController::class, 'store']);
 Route::get('/categories-update', [CategoryController::class, 'update']);
 Route::get('/categories-delete', [CategoryController::class, 'destroy']);
+Route::get('/ads-list', [AdsController::class, 'index']);
