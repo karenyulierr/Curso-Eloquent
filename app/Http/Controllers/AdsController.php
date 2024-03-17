@@ -14,6 +14,11 @@ class AdsController extends Controller
                 ->whereColumn('created_at','updated_at')
                 ->paginate(20);
         
-        return view('sistema.ads',compact('ads'));
+        //Count, avg, sum, max, min
+        //$ads = Ad::all()->count();
+        $totalActivos = $ads->count();
+        $totalvisita = $ads->avg('visita');
+        $sumaVisita = $ads->sum('visita');
+        return view('sistema.ads',compact('ads','totalActivos','totalvisita','sumaVisita'));
     }
 }

@@ -13,6 +13,10 @@
     <h1>Hello, world!</h1>
     <div class="container">
         <div class="row">
+            <h3>Total de anuncios activos : {{$totalActivos}}</h3>
+            <h3>Total promedio de visitas : {{$totalvisita}}</h3>
+            <h3>suma tomal de visita : {{$sumaVisita}}</h3>
+            
             <div class="col">
                 <table class="table">
                     <thead>
