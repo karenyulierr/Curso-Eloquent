@@ -10,4 +10,9 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable=['nombre','status'];
+
+    public function profiles()
+    {
+        return $this->hasMany(Profile::class);
+    }
 }
